@@ -105,7 +105,7 @@ std::string GetDefaultSoundBackend()
   if (AlsaSound::IsValid())
     backend = BACKEND_ALSA;
 #elif defined(__APPLE__) || defined(_WIN32)
-  backend = BACKEND_OPENAL; // UWP - Cubeb needs fixing!
+  backend = BACKEND_WASAPI; // UWP - Cubeb needs fixing!
 #endif
   return backend;
 }
