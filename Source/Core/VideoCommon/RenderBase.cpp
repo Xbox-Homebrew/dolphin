@@ -1168,6 +1168,10 @@ void Renderer::BeginImGuiFrameUnlocked()
   io.DeltaTime = time_diff_secs;
 
 #ifdef _UWP
+  io.DisplayFramebufferScale =
+      ImVec2((m_backbuffer_width/1920.f), (m_backbuffer_height/1080.f));
+  io.FontGlobalScale = (m_backbuffer_width / 1920.f);
+  
   std::vector<std::unique_ptr<ControllerEmu::Control>>* btns;
   std::vector<std::unique_ptr<ControllerEmu::Control>>* stick;
 
